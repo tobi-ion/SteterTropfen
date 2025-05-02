@@ -1,0 +1,93 @@
+.flag-button {
+    padding: 4px 10px;  /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 12px;   /* Reduced font size */
+    color: #333;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;  /* Adjusted line height */
+}
+
+.flag-button:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flag-button[data-language="en"].active,
+.flag-button[data-language="de"].active,
+.flag-button[data-language="es"].active,
+.flag-button[data-language="pt"].active,
+.flag-button[data-language="it"].active,
+.flag-button[data-language="uk"].active {
+    background: rgba(224, 224, 224, 0.9);
+}
+
+.sidebar {
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    overflow-y: auto; /* Scroll if content too long */
+    background-color: #222; /* or whatever your theme is */
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.tm-main-row {
+    margin-left: 25%; /* Adjust based on sidebar width */
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+
+    .tm-main-row {
+        margin-left: 0;
+    }
+}
+
+
+
+.toggle-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease-out;
+
+  /* Add layout control */
+  width: 73vw;         /* Take 75% of the screen width */
+  margin-left: 27vw;   /* Push it to start after 25% */
+  background: white;   /* Keep it white */
+  padding: 1rem;       /* Optional: spacing inside the box */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: slight shadow */
+  border-radius: 8px;  /* Optional: rounded corners */
+}
+
+.toggle-content a {
+  color: #0077cc; /* A nice readable blue */
+  text-decoration: underline; /* Optional, to distinguish links */
+}
+
+.toggle-content a:hover {
+  color: #005999; /* Darker on hover */
+}
+
+
+#impressum-content {
+    background-color: white;
+    color: black;
+    padding: 15px;
+}
+
+.toggle-content.open {
+  max-height: 1000px; /* Enough to show full content */
+  transition: max-height 0.4s ease-in;
+}
+
